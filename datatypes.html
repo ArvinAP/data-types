@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <!--Form-->
+    <div class="form">
+        <label for="inputName">Name:</label>
+        <input type="text" id="inputName">
+
+        <label for="inputGrade">Grade:</label>
+        <input type="text" id="inputGrade">
+
+        <label for="inputDate">Enrolled Date</label>
+        <input type="date" id="inputDate">
+
+        <label for="inputHobbies">Hobbies</label>
+        <input type="text" id="inputHobbies">
+        <button onclick="updateStudentInformation()">Update Student Information</button>
+    </div>
+
+    <!--Display-->
+    <h1>Inputted Information</h1>
+    <div class="display">
+        <p><strong>Name:</strong><span id="name"></span></p>
+        <p><strong>Grade:</strong><span id="grade"></span></p>
+        <p><strong>Enrolled Date:</strong><span id="eDate"></span></p>
+        <p><strong>Hobbies:</strong><span id="hobbies"></span></p>
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+        function updateStudentInformation(){
+            const name = document.getElementById("inputName").value;
+            const grade = document.getElementById("inputGrade").value;
+            const eDate = document.getElementById("inputDate").value;
+            const hobbies = document.getElementById("inputHobbies").value.split(",").map(item => item.trim());
+
+            student.name = name;
+            student.grade = grade;
+            student.eDate = new Date(eDate);
+            student.hobbies = hobbies;
+
+            document.getElementById("name").innerHTML = student.name;
+            document.getElementById("grade").innerHTML = student.grade;
+            document.getElementById("eDate").innerHTML = student.eDate.toDateString();
+            const hobbiesString = student.hobbies.join(", ");
+            document.getElementById("hobbies").innerHTML = hobbiesString;
+        }
+    </script>
+    <button onclick=""></button>
+</body>
+
+</html>
